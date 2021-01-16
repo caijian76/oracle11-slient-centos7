@@ -1,8 +1,5 @@
 #!/bin/bash
 
-
-
-
 function continue {
 while true;do
   read -s -e  -n1 -p "$1[Y/N]?" answer
@@ -600,15 +597,3 @@ showall
 if [ $archivemode -eq 1 ];then
 	echo -e "\033[31m重要提醒：由于开启了归档模式，请务必使用rman工具定期清理归档日志，否则会造成磁盘空间大量占用。\033[0m"
 fi
-
-
-
-
-	
-
-
-
-
-
-
-
