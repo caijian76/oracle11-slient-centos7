@@ -1,4 +1,5 @@
 #!/bin/bash
+#Create by Kingosoft Caijian
 
 function continue {
 while true;do
