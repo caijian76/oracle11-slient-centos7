@@ -34,7 +34,6 @@ function network()
 
 }
 
-
 # 创建用户、组、安装目录
 function add_user_dir {
 	grep oinstall /etc/group >& /dev/null
