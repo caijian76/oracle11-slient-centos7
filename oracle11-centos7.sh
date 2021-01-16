@@ -12,7 +12,6 @@ while true;do
 done
 }
 
-
 #检测网络链接畅通
 function network()
 {
