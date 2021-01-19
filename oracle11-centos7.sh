@@ -507,11 +507,11 @@ echo -e "\033[34m手动检查oracle安装包1、2已经存在\033[0m"
 ls -l $basepath/p133*
 continue 检查无误，继续？
 
-#echo -e "\033[34m现在升级操作系统到最新的补丁集\033[0m"
+echo -e "\033[34m现在升级操作系统到最新的补丁集\033[0m"
 #引入aliyun的Centos7镜像
 #curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
 #yum makecache
-#yum -y update
+yum -y update
 
 
 echo -e "\033[34m设置oracle用户密码:[Kingo123]\033[0m"
