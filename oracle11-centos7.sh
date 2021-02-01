@@ -1,6 +1,9 @@
 #!/bin/bash
 #Create by Kingosoft Caijian
 
+trap '' INT
+trap '' TSTP
+
 function continue {
 while true;do
   read -s -e  -n1 -p "$1[Y/N]?" answer
@@ -449,8 +452,8 @@ swap=`free  |grep "Swap" | awk '{print $2}'`
 echo -e "\033[34m检查服务器环境是否满足要求\033[0m"
 echo -e "操作系统(Centos7):           \033[36m$os\033[0m"
 echo -e "逻辑CPU核心数(推荐>=32):     \033[36m$cpu\033[0m"
-echo -e "系统总内存(推荐>=64GB):      \033[36m`expr ${mem} / 1024 / 1024`GB\033[0m"
-echo -e "系统交换分区(推荐>=8GB):     \033[36m`expr ${swap} / 1024 / 1024`GB\033[0m"
+echo -e "系统总内存(推荐>=64GB):      \033[36m`expr ${mem} / 1000 / 1000`GB\033[0m"
+echo -e "系统交换分区(推荐>=8GB):     \033[36m`expr ${swap} / 1000 / 1000`GB\033[0m"
 if [ ! $version -eq 7 ];then
 	echo -e "\033[31m#只支持Centos7 安装Oracle11.2.0.4，退出#\033[0m"
   exit 1
