@@ -448,9 +448,9 @@ swap=`free  |grep "Swap" | awk '{print $2}'`
 
 echo -e "\033[34m检查服务器环境是否满足要求\033[0m"
 echo -e "操作系统(Centos7):           \033[36m$os\033[0m"
-echo -e "逻辑CPU核心数(>=16):         \033[36m$cpu\033[0m"
-echo -e "系统总内存(>=33554432KB):    \033[36m$mem\033[0m"
-echo -e "系统交换分区(>=8388608KB):   \033[36m$swap\033[0m"
+echo -e "逻辑CPU核心数(推荐>=32):     \033[36m$cpu\033[0m"
+echo -e "系统总内存(推荐>=64GB):      \033[36m`expr ${mem} / 1024 / 1024`GB\033[0m"
+echo -e "系统交换分区(推荐>=8GB):     \033[36m`expr ${swap} / 1024 / 1024`GB\033[0m"
 if [ ! $version -eq 7 ];then
 	echo -e "\033[31m#只支持Centos7 安装Oracle11.2.0.4，退出#\033[0m"
   exit 1
@@ -579,12 +579,11 @@ while true;do
 done
 
 continue 接下来正式创建数据库，继续？
-echo -e "\033[34m开始创建数据库:\033[0m"
-
+echo -e "\033[34m开始创建数据库配置......\033[0m"
 oracleprofile
-continue 继续？
+echo -e "\033[34m开始创建监听......\033[0m"
 listener
-continue 继续？
+echo -e "\033[34m开始建立数据库文件，请等待......\033[0m"
 instdbca
 
 continue 接下来设置oracle开机自动启动，继续？
